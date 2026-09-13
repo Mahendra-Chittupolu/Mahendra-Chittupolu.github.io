@@ -83,11 +83,22 @@ kbd { border: 1px solid #666; padding: .15rem .38rem; font: .72rem var(--mono); 
 .experience li p { margin: 0; line-height: 1.5; }
 .stamp { position: absolute; left: 2.2rem; bottom: 1.8rem; width: 94px; height: 94px; display: grid; place-items: center; border: 3px solid var(--pink); border-radius: 50%; color: var(--pink); text-align: center; font: 700 1rem var(--mono); transform: rotate(-14deg); }
 
-.project-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1.25rem; }
-.project-card { min-height: 450px; color: var(--ink); border: var(--line); padding: 1.7rem; display: flex; flex-direction: column; transition: transform .12s ease; }
-.project-one { background: var(--acid); grid-row: span 2; min-height: 925px; }
-.project-two { background: var(--pink); }
-.project-three { background: var(--paper); }
+.oss-card { position: relative; overflow: hidden; min-height: 360px; margin-bottom: 1.25rem; padding: 1.8rem; border: 2px solid var(--acid); background: var(--blue); box-shadow: 10px 10px 0 var(--acid); display: grid; grid-template-columns: .45fr 1.35fr .4fr; gap: 2rem; align-items: center; transition: transform .12s ease; }
+.oss-status { align-self: start; width: max-content; padding: .45rem .65rem; border: 1px solid currentColor; font: .7rem var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+.oss-status span { display: inline-block; width: 8px; height: 8px; margin-right: .4rem; border-radius: 50%; background: var(--acid); box-shadow: 0 0 12px var(--acid); animation: blink 1.4s steps(2) infinite; }
+.oss-copy h3 { max-width: 780px; margin: .25rem 0 1rem; font-size: clamp(2.3rem,5vw,5.7rem); line-height: .88; letter-spacing: -.07em; }
+.oss-copy > p:last-child { max-width: 680px; color: #e2e4ff; line-height: 1.55; }
+.oss-mark { width: 130px; height: 130px; justify-self: end; display: grid; place-items: center; border: 3px solid var(--acid); border-radius: 50%; color: var(--acid); font: 700 1.2rem var(--mono); text-align: center; transform: rotate(12deg); }
+
+.project-grid { display: grid; grid-template-columns: repeat(12,1fr); gap: 1.25rem; }
+.project-card { min-height: 480px; color: var(--ink); border: var(--line); padding: 1.7rem; display: flex; flex-direction: column; transition: transform .12s ease; }
+.project-one { grid-column: span 7; background: var(--acid); }
+.project-two { grid-column: span 5; background: var(--pink); }
+.project-three { grid-column: span 4; background: var(--paper); }
+.project-four { grid-column: span 8; background: var(--blue); color: white; }
+.project-five { grid-column: span 7; background: var(--pink); }
+.project-six { grid-column: span 5; background: var(--acid); }
+.project-seven { grid-column: 1 / -1; min-height: 400px; background: var(--paper); box-shadow: 10px 10px 0 var(--pink); }
 .project-num { margin: 0; font: 4rem var(--mono); letter-spacing: -.12em; }
 .project-tag { margin: auto 0 1rem; font: .72rem var(--mono); letter-spacing: .1em; }
 .project-card h3 { max-width: 700px; margin: 0 0 1rem; font-size: clamp(2rem,4vw,4.5rem); line-height: .92; letter-spacing: -.065em; }
@@ -140,8 +151,10 @@ body.low-chaos .noise, body.low-chaos .spotlight { display: none; }
   .section-heading { gap: 1rem; }
   .experience-body { gap: 2rem; }
   .stamp { display: none; }
+  .oss-card { grid-template-columns: 1fr; }
+  .oss-mark { display: none; }
   .project-grid { grid-template-columns: 1fr; }
-  .project-one { min-height: 520px; grid-row: auto; }
+  .project-one, .project-two, .project-three, .project-four, .project-five, .project-six, .project-seven { grid-column: auto; }
   .stack-board > div { grid-template-columns: 1fr 1fr; padding: 1rem 0; }
   .stack-board p { grid-column: 1/-1; margin: 0; }
 }
